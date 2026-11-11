@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 8</title>
+</head>
+<script>
+    let targets=5
+    let timer=window.sessionStorage.getItem("timer");
+    let lvl=window.sessionStorage.getItem("level");
+    if (lvl!=8){
+        let lvl=window.sessionStorage.setItem("level",1);
+        window.location.href="https://docs.google.com/document/d/1zLsp50qckmz4TklDKO4c9JGupYs8BVzj9GDwu7RYpd8/edit?tab=t.0";
+    }
+
+    setInterval(function(){
+        timer--
+        window.sessionStorage.setItem("timer",timer)
+        document.getElementById("timer").innerHTML=timer
+        if (targets<=0){
+            lvl++
+            timer++
+            window.sessionStorage.setItem("timer",timer)
+            window.sessionStorage.setItem("level",lvl)
+            window.location.href="level9.html";
+        }
+        if (timer<=0&&targets>0){
+            window.sessionStorage.setItem("timer",60)
+            window.location="index.html";
+        }
+    }, 1000);
+</script>
+<style>
+    .centered{
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(3, 40px);
+        gap: 8px;
+        justify-self: center;
+        align-self: center;
+    }
+    .grid button{
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <br>
+    <p class="centered" id="timer">Loading...</p>
+    <br>
+    <div class="grid">
+        <button id="1" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        ">X</button>
+        <button id="2" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        "></button>
+        <button id="3" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        "></button>
+
+        <button id="4" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        ">X</button>
+        <button id="5" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        ">X</button>
+        <button id="6" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        ">X</button>
+
+        <button id="7" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        "></button>
+        <button id="8" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        ">X</button>
+        <button id="9" onclick="
+            if (this.innerText=='X'){
+                this.innerText='';
+                targets--;
+            };
+        "></button>
+    </div>
+</body>
+</html>
